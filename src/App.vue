@@ -1,20 +1,23 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
-    <HelloRouter></HelloRouter>
+    <top-nav></top-nav>
+    <side-nav></side-nav>
+    <router-view></router-view>
   </div>
 </template>
 
+
 <script>
-import Hello from './components/Hello'
-import HelloRouter from './components/HelloRouter'
+import topNav from './components/topNav'
+import sideNav from './components/sideNav'
+// import Hello from './components/Hello'
+// import HelloRouter from './components/HelloRouter'
 
 export default {
   name: 'app',
   components: {
-    Hello,
-    HelloRouter
+    'top-nav': topNav,
+    'side-nav': sideNav
   }
 }
 </script>

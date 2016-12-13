@@ -18,8 +18,9 @@ const User = {
   }
 }
 const routes = [
+  { path: '/helloRouter', component: require('./components/HelloRouter') },
   { path: '/foo', component: Foo },
-  { path: '/bar', component: require('./components/Hello') },
+  { path: '/hello', component: require('./components/Hello') },
   // 动态路径参数 以冒号开头
   { path: '/user/:id', component: User }
 ]
@@ -31,8 +32,8 @@ const router = new VueRouter({
 })
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  // el: '#app',
   template: '<App/>',
   components: { App },
   router
-})
+}).$mount('#app')
