@@ -7,13 +7,19 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const Foo = { template: '<div>foo</div>' }
-const Bar = { template: '<div>bar</div>' }
+// const Bar = { template: '<div>bar</div>' }
 const User = {
-  template: '<div>User {{ $route.params.id }}</div>'
+  template: '<div>User {{ $route.params.id }}</div>',
+  watch: {
+    '$route' (to, from) {
+      console.log(to, from)
+      // 对路由变化作出响应...
+    }
+  }
 }
 const routes = [
   { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar },
+  { path: '/bar', component: require('./components/Hello') },
   // 动态路径参数 以冒号开头
   { path: '/user/:id', component: User }
 ]
