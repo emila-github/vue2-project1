@@ -2,16 +2,19 @@
   <div id="app">
     <img src="./assets/logo.png">
     <hello></hello>
+    <HelloRouter></HelloRouter>
   </div>
 </template>
 
 <script>
 import Hello from './components/Hello'
+import HelloRouter from './components/HelloRouter'
 
 export default {
   name: 'app',
   components: {
-    Hello
+    Hello,
+    HelloRouter
   }
 }
 </script>
