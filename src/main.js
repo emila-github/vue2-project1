@@ -22,7 +22,24 @@ const routes = [
   { path: '/foo', component: Foo },
   { path: '/hello', component: require('./components/Hello') },
   // 动态路径参数 以冒号开头
-  { path: '/user/:id', component: User }
+  { path: '/user/:id', component: User },
+  { path: '/userChild/:id',
+    component: require('./components/HelloRouter'),
+    children: [
+      {
+        // 当 /userChild/:id/profile 匹配成功，
+        // UserProfile 会被渲染在 User 的 <router-view> 中
+        path: 'userProfile',
+        component: require('./components/UserProfile')
+      },
+      {
+        // 当 /userChild/:id/posts 匹配成功
+        // UserPosts 会被渲染在 User 的 <router-view> 中
+        path: 'posts',
+        component: require('./components/UserPosts')
+      }
+    ]
+  }
 ]
 
 // 3. 创建 router 实例，然后传 `routes` 配置

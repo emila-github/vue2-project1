@@ -7,6 +7,7 @@
       <li><router-link to="/helloRouter">Go to HelloRouter</router-link></li>
       <li><router-link to="/user/foo">/user/foo</router-link></li>
       <li><router-link to="/user/bar">/user/bar</router-link></li>
+      <li><router-link to="/userChild/bar">/userChild/bar</router-link></li>
     </ul>
   </div>
 </template>
