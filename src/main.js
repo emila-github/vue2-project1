@@ -23,6 +23,7 @@ const routes = [
   { path: '/hello', component: require('./components/Hello') },
   // 动态路径参数 以冒号开头
   { path: '/user/:id', component: User },
+  { path: '/userName/:id', component: User, name: 'userName' },
   { path: '/userChild/:id',
     component: require('./components/HelloRouter'),
     children: [
