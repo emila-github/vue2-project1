@@ -17,24 +17,24 @@ const User = {
     }
   }
 }
+const sideNav = require('./components/sideNav')
 const routes = [
   { path: '/',
     // a single route can define multiple named components
     // which will be rendered into <router-view>s with corresponding names.
     components: {
       default: require('./components/Hello'),
-      side: require('./components/sideNav')
-    }
-  },
-  { path: '*',
-    // a single route can define multiple named components
-    // which will be rendered into <router-view>s with corresponding names.
-    components: {
-      side: require('./components/sideNav')
+      side: sideNav
     }
   },
   { path: '/helloRouter', component: require('./components/HelloRouter') },
-  { path: '/foo', component: Foo },
+  { path: '/foo',
+    // component: Foo
+    components: {
+      default: Foo,
+      side: sideNav
+    }
+  },
   { path: '/hello', component: require('./components/Hello') },
   // 动态路径参数 以冒号开头
   { path: '/user/:id', component: User },
