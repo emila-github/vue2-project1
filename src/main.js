@@ -18,6 +18,21 @@ const User = {
   }
 }
 const routes = [
+  { path: '/',
+    // a single route can define multiple named components
+    // which will be rendered into <router-view>s with corresponding names.
+    components: {
+      default: require('./components/Hello'),
+      side: require('./components/sideNav')
+    }
+  },
+  { path: '*',
+    // a single route can define multiple named components
+    // which will be rendered into <router-view>s with corresponding names.
+    components: {
+      side: require('./components/sideNav')
+    }
+  },
   { path: '/helloRouter', component: require('./components/HelloRouter') },
   { path: '/foo', component: Foo },
   { path: '/hello', component: require('./components/Hello') },

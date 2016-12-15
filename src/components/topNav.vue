@@ -2,8 +2,9 @@
   <div class="header">
     <img src="../assets/logo.png" width="50px;"  height="50px;" >{{header}}
     <ul>
-      <li><a href="#" target="_blank">header1</a></li>
-      <li><a href="#" target="_blank">header2</a></li>
+      <li><router-link to="/">sideNav</router-link></li>
+      <li><router-link to="/sideNav2">sideNav2</router-link></li>
+      <li><a href="#" target="_blank">header</a></li>
     </ul>
   </div>
 </template>
